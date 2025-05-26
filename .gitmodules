@@ -1,0 +1,12 @@
+[submodule "projects/UAVarPrior"]
+	path = projects/UAVarPrior
+	url = git@github-sanjeevar:SanjeevaRDodlapati/UAVarPrior.git
+[submodule "projects/GenomicLightning"]
+	path = projects/GenomicLightning
+	url = git@github-sanjeevar:SanjeevaRDodlapati/GenomicLightning.git
+[submodule "projects/FuGEP"]
+	path = projects/FuGEP
+	url = git@github-sanjeevar:SanjeevaRDodlapati/FuGEP.git
+[submodule "projects/TransMet"]
+	path = projects/TransMet
+	url = git@github-sanjeevar:SanjeevaRDodlapati/TransMet.git
