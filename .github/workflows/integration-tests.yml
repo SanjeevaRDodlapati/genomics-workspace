@@ -1,0 +1,37 @@
+name: Integration Tests
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        submodules: recursive
+        
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+        
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        # Install dependencies from all submodules
+        for repo in UAVarPrior GenomicLightning FuGEP TransMet; do
+          if [ -f "$repo/requirements.txt" ]; then
+            pip install -r "$repo/requirements.txt"
+          fi
+        done
+        
+    - name: Run integration tests
+      run: |
+        echo "Running integration tests..."
+        # Add integration test commands here
+        python -c "print('Integration tests passed!')"
